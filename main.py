@@ -12,6 +12,10 @@ def home():
 def contatos():
     return "Esta é a página de contatos."
 
+@app.route("/apresentacao")
+def apresentacao():
+    return "Esta é a página de apresentação."
+
 # Inicia o servidor local
 if __name__ == "__main__":
     app.run(debug=True)
