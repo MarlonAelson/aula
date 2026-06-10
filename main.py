@@ -1,7 +1,17 @@
-from fpdf import FPDF
+from flask import Flask
 
-pdf = FPDF()
-pdf.add_page()
-pdf.set_font("Arial", size=12)
-pdf.cell(200, 10, txt="Meu primeiro PDF gerado com Python!", ln=1, align="C")
-pdf.output("meu_arquivo.pdf")
+# Inicializa a aplicação Flask
+app = Flask(__name__)
+
+# Define a rota para a página principal ("/")
+@app.route("/")
+def home():
+    return "Olá, mundo! Esta é a minha primeira página com Flask."
+
+@app.route("/contatos")
+def contatos():
+    return "Esta é a página de contatos."
+
+# Inicia o servidor local
+if __name__ == "__main__":
+    app.run(debug=True)
